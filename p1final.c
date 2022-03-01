@@ -14,7 +14,6 @@ void find_dist(float x1, float y1, float x2, float y2, float *dist)
   x3 = (x2-x1)*(x2-x1);
   y3 = (y2-y1)*(y2-y1);
   z = y3 + x3;
-  //ENTERING SQRT FUNC. BELOW
   *dist = sqrt(z);
 }
 
