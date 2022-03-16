@@ -3,8 +3,10 @@
 
 void input_two_string(char *string,char *substring)
 { 
-  printf("enter the words\n");
-  scanf("%s %s",string,substring);
+  printf("Enter the Word:\n");
+  scanf("%s", string);
+  printf("Enter the substring you wish to find:\n");
+  scanf("%s", substring);
 }
 
 int str_index(char *string, char *substring)
@@ -20,13 +22,13 @@ int str_index(char *string, char *substring)
                 k++;
                 n=k-strlen(substring);
               }
-            else 
+            else
               {
                 k++;
               }
           }
       }
-  return n;
+  return n+1;
 }
 
 void output(char *string, char *substring, int index)

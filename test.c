@@ -1,46 +1,43 @@
 #include<stdio.h>
-#include<math.h>
-struct _point {
-float x,y;
-};
-typedef struct _point Point;
-struct _line
+#include<string.h>
+
+void input_string(char *string, char *substring)
 {
-Point p1,p2;
-float distance;
-};
-typedef struct _line Line;
-Point input_point()
-{
-  Point p1;
-  printf("enter the values of x and y\n");
-  scanf("%f%f",&p1.x,&p1.y);
-  return p1;
+  printf("Enter the string \n");
+  scanf("%s",string);
+  printf("Enter the substring \n");
+  scanf("%s",substring);
 }
-Line input_line()
+
+int str_reverse(char *string,char *substring)
 {
-  Line l;
-  Point p1,p2;
-  p1=input_point();
-  p2=input_point();
-  l.p1=p1;
-  l.p2=p2;
-  return l;
+  int r, j, i;
+  for(i=0; string[i]!='\0'; i++)
+  {
+    for(j=0; substring[j]!='\0'; j++)
+     {
+       if(substring[j] == string[i])
+       {
+         i++;
+         r = i - strlen(substring);
+       }
+     }
+  }
+  return r;
 }
-void find_length(Line *l)
+
+void output(char *string,char *substring,int index)
 {
-  l->distance=sqrt(pow((l->p2.x - l->p1.x),2)+pow((l->p2.y-l->p1.y),2));
+  printf("The index of SubString %s is %d\n",substring,index);
 }
-void output(Line *l)
-{
-  printf("the distance between the points %f,%f  %f,%f is %f\n",l->p1.x,l->p1.y,l->p2.x,l->p2.y,l->distance);
-}
+
 int main()
 {
-  Point p1,p2;
-  Line l1;
-  l1=input_line();
-  find_length(&l1);
-  output(&l1);
+  int result;
+  char s[20];
+  char sub_s[20];
+  input_string(s,sub_s);
+  result = str_reverse(s,sub_s);
+  output(s,sub_s,result);
   return 0;
 }
