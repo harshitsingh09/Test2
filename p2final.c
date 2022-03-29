@@ -18,17 +18,17 @@ int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
   s2 = sqrt(((x3-x2)*(x3-x2))+((y3-y2)*(y3-y2)));
   s3 = sqrt(((x1-x3)*(x1-x3))+((y1-y3)*(y1-y3)));
   if(s1+s2>s3 && s2+s3>s1 && s1+s3>s2)
-    return 1;
-  else
     return 0;
+  else
+    return 1;
 }
 
 void output(float x1, float y1, float x2, float y2,float x3, float y3, int istriangle)
 {
   if (istriangle == 0)
-  printf("The lines from the points (%f,%f), (%f,%f) & (%f,%f) IS a Triangle",x1, y1, x2, y2, x3, y3);
+  printf("The lines from the points (%f,%f), (%f,%f) & (%f,%f) IS a Triangle.\n",x1, y1, x2, y2, x3, y3);
   else
-    printf("The lines from the points (%f,%f), (%f,%f) & (%f,%f) is NOT a triangle",x1, y1, x2, y2, x3, y3);
+    printf("The lines from the points (%f,%f), (%f,%f) & (%f,%f) is NOT a triangle.\n",x1, y1, x2, y2, x3, y3);
 }
 
 int main()
