@@ -1,0 +1,83 @@
+ gcc -g p2final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0xa57: file p2final.c, line 35.
+(gdb) 
+Note: breakpoint 1 also set at pc 0xa57.
+Breakpoint 2 at 0xa57: file p2final.c, line 35.
+(gdb) r
+Starting program: /home/runner/Test2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:35
+35  {
+(gdb) i lo
+x1 = 0
+y1 = -6.00135803
+x2 = 3.07963364e-41
+y2 = -6.0008316
+x3 = 3.07963364e-41
+y3 = -3.99771433e+18
+istriangle = 32765
+(gdb) n
+37    input_line(&x1, &y1, &x2, &y2, &x3, &y3);
+(gdb) s
+input_line (x1=0x7ffdde5de9ec, y1=0x7ffdde5de9f0, x2=0x7ffdde5de9f4, 
+    y2=0x7ffdde5de9f8, x3=0x7ffdde5de9fc, y3=0x7ffdde5dea00) at p2final.c:6
+6     printf("Enter the values of the first Coordinates:\n");
+(gdb) n
+Enter the values of the first Coordinates:
+7     scanf("%f %f", x1, y1);
+(gdb) n
+n
+8     printf("Enter the values of the second Coordinates:\n");
+(gdb) n
+Enter the values of the second Coordinates:
+9     scanf("%f %f", x2, y2);
+(gdb) n
+1
+1
+10    printf("Enter the values of the third Coordinates:\n");
+(gdb) n
+Enter the values of the third Coordinates:
+11    scanf("%f %f", x3, y3);
+(gdb) n
+2
+2
+12  }
+(gdb) n
+main () at p2final.c:38
+38    int istriangle = is_triangle(x1, y1, x2, y2, x3, y3);
+(gdb) i lo
+x1 = 0
+y1 = -6.00135803
+x2 = 1
+y2 = 1
+x3 = 2
+y3 = 2
+istriangle = 32765
+(gdb) n
+39    output(x1, y1, x2, y2, x3, y3, istriangle);
+(gdb) n
+The lines from the points (0.000000,-6.001358), (1.000000,1.000000) & (2.000000,2.000000) IS a Triangle.
+40    return 0;
+(gdb) n
+41  }(gdb) c
+Continuing.
+[Inferior 1 (process 450) exited normally]
+(gdb) q
