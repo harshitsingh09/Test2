@@ -11,11 +11,11 @@ int input()
 int find_fibo(int n)
 {
   int a,b,k,fib;
-  for (a = 0, b = 1, k = 0; k < n; k++)
+  for (a = 0, b = 1, k = 1; k < n; k++)
     {
-      if (n==1)
+      if (n==0)
         fib = 0;
-      else if(n==2)
+      else if(n==1)
         fib = 1;
       else
         {

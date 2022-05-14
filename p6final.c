@@ -33,7 +33,8 @@ int str_index(char *string, char *substring)
 
 void output(char *string, char *substring, int index)
 {
-  printf("The index of '%s' in '%s' is %d\n",substring,string,index);
+  printf("The index of '%s' in '%s' is %d\n", substring, string, 
+    index);
 }
 
 int main()

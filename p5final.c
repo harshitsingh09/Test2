@@ -8,7 +8,7 @@ int input_array_size()
   return n;
 }
 
-void init_array(int n, int a[n])
+void input_array(int n, int a[n])
 {
   for (int i=1; i<n; i++)
     {
@@ -46,7 +46,7 @@ int main()
 {
   int n = input_array_size();
   int a[n];
-  init_array(n, a);
+  input_array(n, a);
   erotosthenes_sieve(n, a);
   out_put(n, a);
   return 0;

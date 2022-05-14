@@ -31,7 +31,7 @@ int input_n()
 
 int input_polygon( int n, Polygon *p)
 {
-  *p.n = n;
+  *p->n = n;
 }
 
 Point input_coordinates()
@@ -70,13 +70,13 @@ void find_perimeter(Polygon *p)
 
 void output(Polygon p)
 {
-  printf("");
+  printf("The perimeter of the polygon with %d sides is equal to %d\n", &p.n, &p.perimeter);
 }
 
 int main()
 {
   int n = input_n();
-  
+  Polygon p;
   output(p)
   return 0;
 }
